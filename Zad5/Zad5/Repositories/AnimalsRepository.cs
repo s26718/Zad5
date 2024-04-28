@@ -4,7 +4,7 @@ namespace Zad5.Repositories;
 
 public class AnimalsRepository : IAnimalsRepository
 {
-    private static List<Animal> _animals = 
+    public static List<Animal> _animals = 
         new List<Animal>
         {
             new Animal("Whiskers", "Mammal", 5.2, "Tabby"),
@@ -38,8 +38,11 @@ public class AnimalsRepository : IAnimalsRepository
             return 0;
         }
 
-        _animals.Remove(animalToUpdate);
-        _animals.Add(animal);
+        animalToUpdate.Category = animal.Category;
+        animalToUpdate.Coloration = animal.Coloration;
+        animalToUpdate.Name = animal.Name;
+        animalToUpdate.Weight = animal.Weight;
+ 
         return 1;
 
     }
@@ -51,10 +54,7 @@ public class AnimalsRepository : IAnimalsRepository
         {
             return 0;
         }
-        else
-        {
-            _animals.Remove(animalToDelete);
-            return 1;
-        }
+        _animals.Remove(animalToDelete);
+        return 1;
     }
 }

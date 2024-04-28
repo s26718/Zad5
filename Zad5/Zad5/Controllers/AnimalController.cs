@@ -47,13 +47,13 @@ public class AnimalController: ControllerBase
     [HttpPut("{id:int}")]
     public IActionResult UpdateAnimal(int id,Animal animal)
     {
-        var affectedCount = _animalService.UpdateAnimal(animal);
+        _animalService.UpdateAnimal(animal);
         return NoContent();
     }
     [HttpDelete("{id:int}")]
     public IActionResult DeleteAnimal(int id)
     {
-        var affectedCount = _animalService.DeleteAnimal(id);
+         _animalService.DeleteAnimal(id);
         return NoContent();
     }
 }

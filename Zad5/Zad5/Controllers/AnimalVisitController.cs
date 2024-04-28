@@ -18,8 +18,8 @@ public class AnimalVisitController:ControllerBase
     //create
     [HttpPost]
     public IActionResult CreateAnimalVisit(AnimalVisit animalVisit)
-    {
-        var affectedCount = _animalVisitService.CreateAnimalVisit(animalVisit);
+    { 
+        _animalVisitService.CreateAnimalVisit(animalVisit);
         return NoContent();
     }
     //get for id 

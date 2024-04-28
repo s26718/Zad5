@@ -9,10 +9,10 @@ public class Animal
     
     [Required]
     [MaxLength(100)]
-    public string Name { get; internal set; }
+    public string Name { get;  set; }
     [Required]
     [MaxLength(100)]
-    public string Category { get; }
+    public string Category { get; set; }
     [Required]
     [Range(0, 999)]
     public double Weight { get; set; }
@@ -29,4 +29,5 @@ public class Animal
         Weight = weight;
         Coloration = coloration;
     }
+
 }
